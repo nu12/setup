@@ -1,0 +1,14 @@
+---
+- name: Programming
+  hosts: localhost
+  roles:
+  - role: common
+  - role: programming
+  vars:
+    ansible_connection: local
+    ansible_python_interpreter: "{{ ansible_playbook_python }}"
+    ruby_version: 3.1.4
+    rails_version: 7.1.2
+    golang_version: 1.20.13
+    node_version: 20
+    java_version: 21

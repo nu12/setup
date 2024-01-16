@@ -1,0 +1,17 @@
+cloud:
+  apt_packages:
+  - awscli
+
+  apt_additional_packages:
+  - name: azure-cli
+    gpg_key: https://packages.microsoft.com/keys/microsoft.asc
+    apt_repo: https://packages.microsoft.com/repos/azure-cli/
+    release: "$(lsb_release -cs) main"
+    packages:
+    - azure-cli
+  - name: google-cloud-cli
+    gpg_key: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+    apt_repo: https://packages.cloud.google.com/apt
+    release: "cloud-sdk main"
+    packages:
+    - google-cloud-cli

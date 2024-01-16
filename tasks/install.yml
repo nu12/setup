@@ -1,0 +1,57 @@
+---
+- name: Add additional apt repositories
+  ansible.builtin.shell: |
+    curl -fsSL {{ item.gpg_key }} | gpg --dearmor | tee /etc/apt/trusted.gpg.d/{{ item.name }}.gpg
+    apt-add-repository "deb [arch=amd64] {{ item.apt_repo }} {{ item.release }}"
+  become: true
+  with_items: "{{ apt_additional_packages | default({}) }}"
+  tags:
+  - ubuntu
+
+- name: Add additional PPA repositories
+  ansible.builtin.shell: |
+    apt-add-repository -y ppa:{{ item.repo }}
+  become: true
+  with_items: "{{ ppa_packages | default({}) }}"
+  tags:
+  - ubuntu
+
+- name: Install packages from apt
+  ansible.builtin.apt:
+    name: "{{ item }}"
+    state: latest
+    allow_downgrade: true
+  become: true
+  with_items: 
+  - "{{ apt_packages | default([]) }}"
+  - "{{ apt_additional_packages | default({}) | selectattr('packages', 'defined') | map(attribute='packages') }}"
+  - "{{ ppa_packages | default({}) | selectattr('packages', 'defined') | map(attribute='packages') }}"
+  tags:
+  - ubuntu
+
+- name: Install packages from scripts
+  ansible.builtin.shell: |
+    curl -fsSL {{ item.url }} | /bin/bash -
+    {{ item.post_script }}
+  become: true
+  with_items: "{{ install_scripts | default({}) }}"
+  tags:
+  - ubuntu
+
+- name: Install binaries
+  ansible.builtin.shell: |
+    curl -fsSL -o {{ item.name }} {{ item.url }}
+    chmod +x {{ item.name }}
+    mv {{ item.name }} /usr/bin/
+  become: true
+  with_items: "{{ install_binaries | default({}) }}"
+  tags:
+  - ubuntu
+
+- name: Add user to group
+  ansible.builtin.shell: |
+    usermod -aG {{ item }} {{ ansible_user_id }} 
+  become: true
+  with_items: "{{ add_user_to_groups | default([]) }}"
+  tags:
+  - ubuntu

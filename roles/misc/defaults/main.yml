@@ -1,0 +1,15 @@
+misc:
+  apt_packages:
+  - zsh
+  - wget
+  - tree
+  - snap
+  - unzip
+  - tilix
+  - vlc
+  - gimp
+  - flameshot
+
+  install_binaries:
+  - name: rand
+    url: https://github.com/nu12/rand/releases/download/v1.0/rand-ubuntu

@@ -1,0 +1,11 @@
+---
+- name: Install
+  include_tasks:
+    file: tasks/install.yml
+  vars: 
+    apt_additional_packages: "{{ infra.apt_additional_packages }}"
+    install_scripts: "{{ infra.install_scripts }}"
+    install_binaries: "{{ infra.install_binaries }}"
+    add_user_to_groups: "{{ infra.add_user_to_groups }}"
+  tags:
+  - ubuntu

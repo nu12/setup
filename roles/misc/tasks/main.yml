@@ -1,0 +1,9 @@
+---
+- name: Install
+  include_tasks:
+    file: tasks/install.yml
+  vars: 
+    apt_packages: "{{ misc.apt_packages }}"
+    install_binaries: "{{ misc.install_binaries }}"
+  tags:
+  - ubuntu

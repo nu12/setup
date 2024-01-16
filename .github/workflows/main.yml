@@ -1,0 +1,24 @@
+name: Build
+on:
+  pull_request:
+    branches:
+    - main
+  push:
+    branches:
+    - main
+  workflow_dispatch: {}
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        dockerfile: [ubuntu-20.04, ubuntu-22.04]
+        playbook: [cloud, infra, programming, misc]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Run playbook
+      run: |
+        PLATFORM=$(echo ${{ matrix.dockerfile }} | cut -d "-" -f 1)
+        docker build -f .github/dockerfiles/${{ matrix.dockerfile }}.Dockerfile -t setup .
+        docker run setup /bin/bash -c "/home/me/.local/bin/ansible-playbook ${{ matrix.playbook }}.yml --tags $PLATFORM"

@@ -1,0 +1,49 @@
+infra:
+  apt_additional_packages:
+  - name: hashicorp
+    gpg_key: https://apt.releases.hashicorp.com/gpg
+    apt_repo: https://apt.releases.hashicorp.com
+    release: "$(lsb_release -cs) main"
+    packages:
+    - packer
+    - terraform
+  - name: docker
+    gpg_key: https://download.docker.com/linux/ubuntu/gpg
+    apt_repo: https://download.docker.com/linux/ubuntu
+    release: "$(lsb_release -cs) stable"
+    packages:
+    - docker-ce
+    - docker-ce-cli
+    - containerd.io
+    - docker-buildx-plugin
+    - docker-compose-plugin
+  - name: kubectl
+    gpg_key: https://pkgs.k8s.io/core:/stable:/v1.29/deb/Release.key
+    apt_repo: https://pkgs.k8s.io/core:/stable:/v1.29/deb/
+    release: "/"
+    packages:
+    - kubectl
+  - name: aquasecurity
+    gpg_key: https://aquasecurity.github.io/trivy-repo/deb/public.key
+    apt_repo: https://aquasecurity.github.io/trivy-repo/deb
+    release: "$(lsb_release -sc) main"
+    packages:
+    - trivy
+  - name: virtualbox
+    gpg_key: https://www.virtualbox.org/download/oracle_vbox_2016.asc
+    apt_repo: https://download.virtualbox.org/virtualbox/debian
+    release: "$(lsb_release -sc) contrib"
+    packages:
+    - virtualbox-6.1
+
+  install_scripts:
+  - name: helm
+    url: https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+    post_script: ""
+
+  install_binaries:
+  - name: minikube
+    url: https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+
+  add_user_to_groups:
+  - docker
