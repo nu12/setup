@@ -4,9 +4,14 @@ This repo is the automation of my work/study setup. All the choices made were he
 
 ## Getting started
 
-Install python and ansible to be able to run the playbooks:
+Install git to clone this repo and python and ansible to be able to run the playbooks:
 ```
-apt-get install python3 python3-pip && python3 -m pip install --user ansible
+apt-get install git python3 python3-pip && python3 -m pip install --user ansible
+```
+
+To clone this repo:
+```
+git clone https://github.com/nu12/setup && cd setup
 ```
 
 ## Run the setup
@@ -35,7 +40,6 @@ The following plays are availables:
   * gnupg2
 
 * Programming
-  * git
   * jq
   * make
   * sublime-text
@@ -70,6 +74,7 @@ The following plays are availables:
   * tilix
   * virtualbox
   * rand
+  * brave
 
 ## Available platforms
 
