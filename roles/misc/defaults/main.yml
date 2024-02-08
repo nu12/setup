@@ -9,6 +9,7 @@ misc:
   - vlc
   - gimp
   - flameshot
+  - xsel
 
   apt_additional_packages:
   - name: brave
