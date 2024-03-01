@@ -48,6 +48,7 @@ The following plays are availables:
   * Golang
   * Java
   * Node
+  * Warp (Terminal)
 
 * Infra
   * docker
@@ -75,6 +76,7 @@ The following plays are availables:
   * virtualbox
   * rand
   * brave
+  * veracrypt
 
 ## Available platforms
 

@@ -4,7 +4,8 @@
     file: tasks/install.yml
   vars: 
     apt_packages: "{{ misc.apt_packages }}"
-    install_binaries: "{{ misc.install_binaries }}"
     apt_additional_packages: "{{ misc.apt_additional_packages }}"
+    install_deb: "{{ misc.install_deb }}"
+    install_binaries: "{{ misc.install_binaries }}"
   tags:
   - ubuntu

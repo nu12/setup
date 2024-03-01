@@ -29,6 +29,16 @@
   tags:
   - ubuntu
 
+- name: Install packages from .deb files
+  ansible.builtin.shell: |
+    curl -fsSL {{ item.url }} > {{ item.name }}.deb 
+    dpkg -i {{ item.name }}.deb
+    rm {{ item.name }}.deb
+  become: true
+  with_items: "{{ install_deb | default({}) }}"
+  tags:
+  - ubuntu
+
 - name: Install packages from scripts
   ansible.builtin.shell: |
     curl -fsSL {{ item.url }} | /bin/bash -
