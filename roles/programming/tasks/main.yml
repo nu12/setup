@@ -6,6 +6,7 @@
     apt_packages: "{{ programming.apt_packages }}"
     apt_additional_packages: "{{ programming.apt_additional_packages }}"
     ppa_packages: "{{ programming.ppa_packages }}"
+    install_deb: "{{ programming.install_deb }}"
     install_scripts: "{{ programming.install_scripts }}"
     add_user_to_groups: "{{ programming.add_user_to_groups }}"
   tags:
