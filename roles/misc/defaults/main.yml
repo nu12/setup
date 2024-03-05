@@ -22,8 +22,6 @@ misc:
   install_deb:
   - name: veracrypt
     url: "https://launchpad.net/veracrypt/trunk/1.26.7/+download/veracrypt-1.26.7-Ubuntu-22.04-amd64.deb"
-  - name: edge
-    url: "https://go.microsoft.com/fwlink?linkid=2149051&brand=M102"
 
   install_binaries:
   - name: rand

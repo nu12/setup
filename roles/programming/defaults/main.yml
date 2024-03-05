@@ -2,6 +2,7 @@ programming:
   apt_packages:
   - jq
   - make
+  - remmina
   # Warp
   - libxkbcommon-x11-0
   - libegl1
