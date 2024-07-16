@@ -1,6 +1,5 @@
 misc:
   apt_packages:
-  - zsh
   - wget
   - tree
   - snap
