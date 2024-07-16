@@ -5,54 +5,31 @@
   vars: 
     apt_packages: "{{ programming.apt_packages }}"
     apt_additional_packages: "{{ programming.apt_additional_packages }}"
-    ppa_packages: "{{ programming.ppa_packages }}"
     install_deb: "{{ programming.install_deb }}"
     install_scripts: "{{ programming.install_scripts }}"
-    add_user_to_groups: "{{ programming.add_user_to_groups }}"
   tags:
   - ubuntu
 
-- name: Install Java 1/2
-  include_tasks:
-    file: tasks/install.yml
-  vars: 
-    apt_additional_packages:
-    - name: java
-      gpg_key: https://packages.adoptium.net/artifactory/api/gpg/key/public
-      apt_repo: https://packages.adoptium.net/artifactory/deb
-      release: "$(lsb_release -cs) main"
-      packages:
-      - temurin-{{ java_version }}-jdk
-  tags:
-  - ubuntu
-
-- name: Install Java 2/2
+- name: Install Go
   ansible.builtin.shell: |
-    for B in $(ls /usr/lib/jvm/temurin-{{ java_version }}-jdk-amd64/bin); do ln -sf /usr/lib/jvm/temurin-{{ java_version }}-jdk-amd64/bin/$B /usr/bin/$B; done;
-  become: true
+    /home/{{ ansible_user_id }}/.local/bin/mise use -g go@{{ golang_version }}
   tags:
   - ubuntu
 
-- name: Install Ruby and Rails
+- name: Install NodeJS
   ansible.builtin.shell: |
-    /usr/share/rvm/bin/rvm install {{ ruby_version }}
-    for B in $(ls /usr/share/rvm/rubies/ruby-{{ ruby_version }}/bin); do ln -sf /usr/share/rvm/rubies/ruby-{{ ruby_version }}/bin/$B /usr/bin/$B; done;
-    
-    gem install rails -v {{ rails_version }}
-    ln -sf /usr/share/rvm/rubies/ruby-{{ ruby_version }}/bin/rails /usr/bin/rails
-    
-    /usr/share/rvm/bin/rvm fix-permissions
-  become: true
+    /home/{{ ansible_user_id }}/.local/bin/mise use -g node@{{ node_version }}
   tags:
   - ubuntu
 
-- name: Install Golang
+- name: Install Java
   ansible.builtin.shell: |
-    curl -fsSL -o go{{ golang_version }}.linux-amd64.tar.gz https://go.dev/dl/go{{ golang_version }}.linux-amd64.tar.gz
-    rm -rf /usr/local/go && tar -C /usr/local -xzf go{{ golang_version }}.linux-amd64.tar.gz
-    for B in $(ls /usr/local/go/bin); do ln -sf /usr/local/go/bin/$B /usr/bin/$B; done;
-    rm go{{ golang_version }}.linux-amd64.tar.gz
-  become: true
+    /home/{{ ansible_user_id }}/.local/bin/mise use -g java@{{ java_version }}
   tags:
   - ubuntu
 
+- name: Install Ruby
+  ansible.builtin.shell: |
+    /home/{{ ansible_user_id }}/.local/bin/mise use -g ruby@{{ ruby_version }}
+  tags:
+  - ubuntu
