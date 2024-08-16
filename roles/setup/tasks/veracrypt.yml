@@ -4,6 +4,7 @@
     file: tasks/install.yml
   vars: 
     apt_packages:
+    - libayatana-appindicator3-1
     - libwxgtk3.0-gtk3-0v5
     - libfuse2
     - libpcsclite1
