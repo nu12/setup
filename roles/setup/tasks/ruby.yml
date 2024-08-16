@@ -1,0 +1,19 @@
+---
+- name: Install ruby dependencies
+  include_tasks:
+    file: tasks/install.yml
+  vars: 
+    apt_packages:
+    - libffi-dev
+    - libyaml-dev
+  tags:
+  - ubuntu
+
+- name: Install ruby
+  include_tasks:
+    file: tasks/install_with_mise.yml
+  vars: 
+    name: ruby
+    version: "{{ ruby.version }}"
+  tags:
+  - ubuntu

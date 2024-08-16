@@ -1,0 +1,11 @@
+---
+- name: Install mise
+  include_tasks:
+    file: tasks/install.yml
+  vars: 
+    install_scripts:
+    - name: mise
+      url: https://mise.run
+      post_script: "mv /root/.local/bin/mise /home/{{ ansible_user_id }}/.local/bin && echo 'eval \"$(/home/{{ ansible_user_id }}/.local/bin/mise activate bash)\"' >> /home/{{ ansible_user_id }}/.bashrc && echo 'eval \"$(/home/{{ ansible_user_id }}/.local/bin/mise activate zsh)\"' >> /home/{{ ansible_user_id }}/.zshrc"
+  tags:
+  - ubuntu

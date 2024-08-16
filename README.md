@@ -16,67 +16,15 @@ git clone https://github.com/nu12/setup && cd setup
 
 ## Run the setup
 
-To run all playbooks in a ubuntu host:
+To setup playbook in a ubuntu host:
 ```
-ansible-playbook cloud.yml programming.yml infra.yml misc.yml --tags ubuntu
+ansible-playbook setup.yml --tags ubuntu
 ```
 
-To run a specific playbook for a given platform:
+To run the playbook for a given platform:
 ```
 ansible-playbook <playbook>.yml --tags <platform>
 ```
-
-## Available playbooks
-
-The following plays are availables:
-
-* Dependencies (Common) - runs as part of every play
-  * lsb-core
-  * software-properties-common
-  * libssl-dev
-  * apt-transport-https 
-  * ca-certificates
-  * curl
-  * gnupg2
-
-* Programming
-  * jq
-  * make
-  * sublime-text
-  * vscode
-  * Ruby
-  * Golang
-  * Java
-  * Node
-  * Warp (Terminal)
-
-* Infra
-  * docker
-  * terraform
-  * packer
-  * kubernetes
-  * minikube
-  * trivy
-
-* Cloud
-  * gcloud (GCP CLI)
-  * aws (AWS CLI)
-  * az (Azure CLI)
-
-* Misc
-  * zsh
-  * wget
-  * tree
-  * snap
-  * unzip
-  * gimp
-  * vlc
-  * flameshot
-  * tilix
-  * virtualbox
-  * rand
-  * brave
-  * veracrypt
 
 ## Available platforms
 

@@ -1,0 +1,8 @@
+---
+- name: Install flameshot
+  include_tasks:
+    file: tasks/install.yml
+  vars: 
+    apt_packages: "flameshot"
+  tags:
+  - ubuntu

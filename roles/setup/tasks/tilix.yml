@@ -1,0 +1,8 @@
+---
+- name: Install tilix
+  include_tasks:
+    file: tasks/install.yml
+  vars: 
+    apt_packages: "tilix"
+  tags:
+  - ubuntu

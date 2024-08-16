@@ -1,0 +1,14 @@
+---
+- name: Install trivy
+  include_tasks:
+    file: tasks/install.yml
+  vars: 
+    apt_additional_packages:
+    - name: aquasecurity
+      gpg_key: https://aquasecurity.github.io/trivy-repo/deb/public.key
+      apt_repo: https://aquasecurity.github.io/trivy-repo/deb
+      release: "$(lsb_release -sc) main"
+      packages:
+      - trivy
+  tags:
+  - ubuntu

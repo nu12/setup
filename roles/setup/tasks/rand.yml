@@ -1,0 +1,10 @@
+---
+- name: Install rand
+  include_tasks:
+    file: tasks/install.yml
+  vars: 
+    install_binaries:
+    - name: rand
+      url: https://github.com/nu12/rand/releases/download/{{ rand.version }}/rand-ubuntu
+  tags:
+  - ubuntu

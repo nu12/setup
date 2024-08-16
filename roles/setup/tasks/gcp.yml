@@ -1,0 +1,14 @@
+---
+- name: Install google-cloud-cli
+  include_tasks:
+    file: tasks/install.yml
+  vars: 
+    apt_additional_packages:
+    - name: google-cloud-cli
+      gpg_key: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+      apt_repo: https://packages.cloud.google.com/apt
+      release: "cloud-sdk main"
+      packages:
+      - google-cloud-cli
+  tags:
+  - ubuntu

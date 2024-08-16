@@ -1,0 +1,14 @@
+---
+- name: Install kubectl
+  include_tasks:
+    file: tasks/install.yml
+  vars: 
+    apt_additional_packages:
+    - name: kubectl
+      gpg_key: https://pkgs.k8s.io/core:/stable:/{{ kubectl.version }}/deb/Release.key
+      apt_repo: https://pkgs.k8s.io/core:/stable:/{{ kubectl.version }}/deb/
+      release: "/"
+      packages:
+      - kubectl
+  tags:
+  - ubuntu

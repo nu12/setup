@@ -1,0 +1,23 @@
+---
+- name: Install veracrypt dependencies
+  include_tasks:
+    file: tasks/install.yml
+  vars: 
+    apt_packages:
+    - libayatana-appindicator3-1
+    - libwxgtk3.0-gtk3-0v5
+    - libfuse2
+    - libpcsclite1
+    - pcscd
+  tags:
+  - ubuntu
+
+- name: Install veracrypt
+  include_tasks:
+    file: tasks/install.yml
+  vars: 
+    install_deb:
+    - name: veracrypt
+      url: "https://launchpad.net/veracrypt/trunk/{{ veracrypt.version }}/+download/veracrypt-{{ veracrypt.version }}-Ubuntu-{{ veracrypt.ubuntu }}-amd64.deb"
+  tags:
+  - ubuntu

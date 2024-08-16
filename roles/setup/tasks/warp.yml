@@ -1,0 +1,20 @@
+---
+- name: Install warp dependencies
+  include_tasks:
+    file: tasks/install.yml
+  vars: 
+    apt_packages:
+    - libxkbcommon-x11-0
+    - libegl1
+  tags:
+  - ubuntu
+
+- name: Install warp
+  include_tasks:
+    file: tasks/install.yml
+  vars: 
+    install_deb:
+    - name: warp
+      url: "https://app.warp.dev/download?package=deb"
+  tags:
+  - ubuntu

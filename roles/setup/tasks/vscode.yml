@@ -1,0 +1,14 @@
+---
+- name: Install vscode
+  include_tasks:
+    file: tasks/install.yml
+  vars: 
+    apt_additional_packages:
+    - name: vscode
+      gpg_key: https://packages.microsoft.com/keys/microsoft.asc
+      apt_repo: https://packages.microsoft.com/repos/vscode
+      release: "stable main"
+      packages:
+      - code
+  tags:
+  - ubuntu

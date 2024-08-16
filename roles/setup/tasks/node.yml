@@ -1,0 +1,9 @@
+---
+- name: Install node
+  include_tasks:
+    file: tasks/install_with_mise.yml
+  vars: 
+    name: node
+    version: "{{ node.version }}"
+  tags:
+  - ubuntu

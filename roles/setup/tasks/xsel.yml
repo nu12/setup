@@ -1,0 +1,8 @@
+---
+- name: Install xsel
+  include_tasks:
+    file: tasks/install.yml
+  vars: 
+    apt_packages: "xsel"
+  tags:
+  - ubuntu

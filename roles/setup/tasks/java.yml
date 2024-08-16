@@ -1,0 +1,9 @@
+---
+- name: Install java
+  include_tasks:
+    file: tasks/install_with_mise.yml
+  vars: 
+    name: java
+    version: "{{ java.version }}"
+  tags:
+  - ubuntu

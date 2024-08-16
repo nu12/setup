@@ -12,4 +12,4 @@ RUN python3 -m pip install --user ansible
 
 COPY . .
 
-RUN /home/me/.local/bin/ansible-playbook cloud.yml programming.yml infra.yml misc.yml --tags ubuntu
+RUN /home/me/.local/bin/ansible-playbook setup.yml --tags ubuntu
