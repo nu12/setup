@@ -1,0 +1,9 @@
+---
+- name: Install packer
+  include_tasks:
+    file: tasks/install_with_mise.yml
+  vars: 
+    name: packer
+    version: "{{ packer.version }}"
+  tags:
+  - ubuntu

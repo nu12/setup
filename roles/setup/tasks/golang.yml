@@ -1,0 +1,9 @@
+---
+- name: Install golang
+  include_tasks:
+    file: tasks/install_with_mise.yml
+  vars: 
+    name: go
+    version: "{{ golang.version }}"
+  tags:
+  - ubuntu

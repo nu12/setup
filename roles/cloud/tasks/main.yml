@@ -1,9 +1,0 @@
----
-- name: Install
-  include_tasks:
-    file: tasks/install.yml
-  vars: 
-    apt_packages: "{{ cloud.apt_packages }}"
-    apt_additional_packages: "{{ cloud.apt_additional_packages }}"
-  tags:
-  - ubuntu

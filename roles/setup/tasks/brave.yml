@@ -1,0 +1,14 @@
+---
+- name: Install brave
+  include_tasks:
+    file: tasks/install.yml
+  vars: 
+    apt_additional_packages:
+    - name: brave
+      gpg_key: https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+      apt_repo: https://brave-browser-apt-release.s3.brave.com/
+      release: "stable main"
+      packages:
+      - brave-browser
+  tags:
+  - ubuntu

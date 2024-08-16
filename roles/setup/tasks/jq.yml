@@ -1,0 +1,8 @@
+---
+- name: Install jq
+  include_tasks:
+    file: tasks/install.yml
+  vars: 
+    apt_packages: "jq"
+  tags:
+  - ubuntu

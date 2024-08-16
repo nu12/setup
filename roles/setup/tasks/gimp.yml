@@ -1,0 +1,8 @@
+---
+- name: Install gimp
+  include_tasks:
+    file: tasks/install.yml
+  vars: 
+    apt_packages: "gimp"
+  tags:
+  - ubuntu

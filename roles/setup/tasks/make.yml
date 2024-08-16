@@ -1,0 +1,8 @@
+---
+- name: Install make
+  include_tasks:
+    file: tasks/install.yml
+  vars: 
+    apt_packages: "make"
+  tags:
+  - ubuntu

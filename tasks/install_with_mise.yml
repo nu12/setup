@@ -1,0 +1,9 @@
+---
+- name: Install with mise
+  ansible.builtin.shell: |
+    /home/{{ ansible_user_id }}/.local/bin/mise use -g {{ name }}@{{ version }}
+  vars:
+    name: ""
+    version: ""
+  tags:
+  - ubuntu

@@ -1,0 +1,8 @@
+---
+- name: Install snap
+  include_tasks:
+    file: tasks/install.yml
+  vars: 
+    apt_packages: "snap"
+  tags:
+  - ubuntu

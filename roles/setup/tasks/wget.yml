@@ -1,0 +1,8 @@
+---
+- name: Install wget
+  include_tasks:
+    file: tasks/install.yml
+  vars: 
+    apt_packages: "wget"
+  tags:
+  - ubuntu

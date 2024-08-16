@@ -1,0 +1,10 @@
+---
+- name: Install minikube
+  include_tasks:
+    file: tasks/install.yml
+  vars: 
+    install_binaries:
+    - name: minikube
+      url: https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+  tags:
+  - ubuntu

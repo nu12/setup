@@ -1,0 +1,53 @@
+install_aws: true
+install_azure: true
+install_brave: true
+install_docker: true
+install_flameshot: true
+install_gcp: true
+install_gimp: true
+install_helm: true
+install_jq: true
+kubectl:
+  install: true
+  version: v1.30
+install_make: true
+install_minikube: true
+install_mise: true
+rand:
+  install: true
+  version: v1.1.0
+install_remmina: true
+install_snap: true
+install_sublimetext: true
+install_tilix: true
+install_tree: true
+install_trivy: true
+veracrypt:
+  install: true
+  version: 1.26.7
+  ubuntu: 22.04
+install_vlc: true
+install_vscode: true
+install_warp: true
+install_wget: true
+install_xsel: true
+install_zsh: true
+
+golang:
+  install: true
+  version: 1.22.5
+java:
+  install: true
+  version: 21
+node:
+  install: true
+  version: 20
+packer:
+  install: true
+  version: latest
+ruby:
+  install: true
+  version: 3.3
+terraform:
+  install: true
+  version: latest

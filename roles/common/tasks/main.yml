@@ -12,6 +12,6 @@
   include_tasks:
     file: tasks/install.yml
   vars: 
-    apt_packages: "{{ common.apt_packages }}"
+    apt_packages: "{{ ubuntu.apt_packages }}"
   tags:
   - ubuntu

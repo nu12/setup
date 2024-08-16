@@ -1,0 +1,8 @@
+---
+- name: Install vlc
+  include_tasks:
+    file: tasks/install.yml
+  vars: 
+    apt_packages: "vlc"
+  tags:
+  - ubuntu

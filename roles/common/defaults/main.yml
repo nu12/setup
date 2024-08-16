@@ -1,4 +1,4 @@
-common:
+ubuntu:
   apt_packages:
   - lsb-core
   - software-properties-common
@@ -7,3 +7,4 @@ common:
   - ca-certificates
   - curl
   - gnupg2
+  - unzip

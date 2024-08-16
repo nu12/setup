@@ -1,0 +1,232 @@
+---
+- name: Install zsh
+  include_tasks:
+    file: zsh.yml
+  when: install_zsh
+  tags:
+  - ubuntu
+
+- name: Install AWS CLI
+  include_tasks:
+    file: aws.yml
+  when: install_aws
+  tags:
+  - ubuntu
+
+- name: Install Azure CLI
+  include_tasks:
+    file: azure.yml
+  when: install_azure
+  tags:
+  - ubuntu
+
+- name: Install brave
+  include_tasks:
+    file: brave.yml
+  when: install_brave
+  tags:
+  - ubuntu
+
+- name: Install docker
+  include_tasks:
+    file: docker.yml
+  when: install_docker
+  tags:
+  - ubuntu
+
+- name: Install flameshot
+  include_tasks:
+    file: flameshot.yml
+  when: install_flameshot
+  tags:
+  - ubuntu
+
+- name: Install GCP CLI
+  include_tasks:
+    file: gcp.yml
+  when: install_gcp
+  tags:
+  - ubuntu
+
+- name: Install gimp
+  include_tasks:
+    file: gimp.yml
+  when: install_gimp
+  tags:
+  - ubuntu
+
+- name: Install helm
+  include_tasks:
+    file: helm.yml
+  when: install_helm
+  tags:
+  - ubuntu
+
+- name: Install jq
+  include_tasks:
+    file: jq.yml
+  when: install_jq
+  tags:
+  - ubuntu
+
+- name: Install kubectl
+  include_tasks:
+    file: kubectl.yml
+  when: kubectl.install
+  tags:
+  - ubuntu
+
+- name: Install make
+  include_tasks:
+    file: make.yml
+  when: install_make
+  tags:
+  - ubuntu
+
+- name: Install minikube
+  include_tasks:
+    file: minikube.yml
+  when: install_minikube
+  tags:
+  - ubuntu
+
+- name: Install mise
+  include_tasks:
+    file: mise.yml
+  when: install_mise
+  tags:
+  - ubuntu
+
+- name: Install rand
+  include_tasks:
+    file: rand.yml
+  when: rand.install
+  tags:
+  - ubuntu
+
+- name: Install remmina
+  include_tasks:
+    file: remmina.yml
+  when: install_remmina
+  tags:
+  - ubuntu
+
+- name: Install tilix
+  include_tasks:
+    file: tilix.yml
+  when: install_tilix
+  tags:
+  - ubuntu
+
+- name: Install tree
+  include_tasks:
+    file: tree.yml
+  when: install_tree
+  tags:
+  - ubuntu
+
+- name: Install trivy
+  include_tasks:
+    file: trivy.yml
+  when: install_trivy
+  tags:
+  - ubuntu
+
+- name: Install snap
+  include_tasks:
+    file: snap.yml
+  when: install_snap
+  tags:
+  - ubuntu
+
+- name: Install sublimetext
+  include_tasks:
+    file: sublimetext.yml
+  when: install_sublimetext
+  tags:
+  - ubuntu
+
+- name: Install veracrypt
+  include_tasks:
+    file: veracrypt.yml
+  when: veracrypt.install
+  tags:
+  - ubuntu
+
+- name: Install vlc
+  include_tasks:
+    file: vlc.yml
+  when: install_vlc
+  tags:
+  - ubuntu
+
+- name: Install vscode
+  include_tasks:
+    file: vscode.yml
+  when: install_vscode
+  tags:
+  - ubuntu
+
+- name: Install warp
+  include_tasks:
+    file: warp.yml
+  when: install_warp
+  tags:
+  - ubuntu
+
+- name: Install wget
+  include_tasks:
+    file: wget.yml
+  when: install_wget
+  tags:
+  - ubuntu
+
+- name: Install xsel
+  include_tasks:
+    file: xsel.yml
+  when: install_xsel
+  tags:
+  - ubuntu
+
+# mise
+- name: Install golang
+  include_tasks:
+    file: golang.yml
+  when: (install_mise) and (golang.install)
+  tags:
+  - ubuntu
+
+- name: Install java
+  include_tasks:
+    file: java.yml
+  when: (install_mise) and (java.install)
+  tags:
+  - ubuntu
+
+- name: Install node
+  include_tasks:
+    file: node.yml
+  when: (install_mise) and (node.install)
+  tags:
+  - ubuntu
+
+- name: Install packer
+  include_tasks:
+    file: packer.yml
+  when: (install_mise) and (packer.install)
+  tags:
+  - ubuntu
+
+- name: Install ruby
+  include_tasks:
+    file: ruby.yml
+  when: (install_mise) and (ruby.install)
+  tags:
+  - ubuntu
+
+- name: Install terraform
+  include_tasks:
+    file: terraform.yml
+  when: (install_mise) and (terraform.install)
+  tags:
+  - ubuntu

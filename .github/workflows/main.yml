@@ -13,7 +13,7 @@ jobs:
     strategy:
       matrix:
         dockerfile: [ubuntu-20.04, ubuntu-22.04]
-        playbook: [cloud, infra, programming, misc]
+        playbook: [setup]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
