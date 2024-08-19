@@ -6,3 +6,11 @@
     apt_packages: "jq"
   tags:
   - ubuntu
+
+- name: Install jq
+  include_tasks:
+    file: tasks/install_with_homebrew.yml
+  vars: 
+    name: "jq"
+  tags:
+  - macos

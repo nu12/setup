@@ -12,3 +12,12 @@
       - google-cloud-cli
   tags:
   - ubuntu
+
+- name: Install google-cloud-cli
+  include_tasks:
+    file: tasks/install_with_homebrew.yml
+  vars: 
+    name: "google-cloud-sdk"
+    cask: "--cask"
+  tags:
+  - macos

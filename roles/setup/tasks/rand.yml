@@ -8,3 +8,24 @@
       url: https://github.com/nu12/rand/releases/download/{{ rand.version }}/rand-ubuntu
   tags:
   - ubuntu
+
+- name: Enable mise experimental
+  ansible.builtin.shell: |
+    /Users/{{ ansible_user_id }}/.local/bin/mise settings set experimental true
+  tags:
+  - macos
+
+- name: Install rand
+  include_tasks:
+    file: tasks/install_with_mise.yml
+  vars: 
+    name: go:github.com/nu12/rand
+    version: "{{ rand.version }}"
+  tags:
+  - macos
+
+- name: Disable mise experimental
+  ansible.builtin.shell: |
+    /Users/{{ ansible_user_id }}/.local/bin/mise settings set experimental false
+  tags:
+  - macos

@@ -14,7 +14,14 @@
       - containerd.io
       - docker-buildx-plugin
       - docker-compose-plugin
-    add_user_to_groups:
-    - docker
   tags:
   - ubuntu
+
+- name: Install docker (desktop)
+  include_tasks:
+    file: tasks/install_with_homebrew.yml
+  vars: 
+    name: "docker"
+    cask: "--cask"
+  tags:
+  - macos

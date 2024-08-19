@@ -12,3 +12,12 @@
       - brave-browser
   tags:
   - ubuntu
+
+- name: Install brave
+  include_tasks:
+    file: tasks/install_with_homebrew.yml
+  vars: 
+    name: "brave-browser"
+    cask: "--cask"
+  tags:
+  - macos

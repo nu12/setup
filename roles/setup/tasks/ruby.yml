@@ -17,3 +17,4 @@
     version: "{{ ruby.version }}"
   tags:
   - ubuntu
+  - macos

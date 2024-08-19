@@ -7,3 +7,4 @@
     version: "{{ terraform.version }}"
   tags:
   - ubuntu
+  - macos

@@ -6,3 +6,11 @@
     apt_packages: "awscli"
   tags:
   - ubuntu
+
+- name: Install awscli
+  include_tasks:
+    file: tasks/install_with_homebrew.yml
+  vars: 
+    name: "awscli"
+  tags:
+  - macos

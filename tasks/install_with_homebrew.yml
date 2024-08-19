@@ -1,0 +1,9 @@
+---
+- name: Install with homebrew
+  ansible.builtin.shell: |
+    brew install {{ cask }} {{ name }}
+  vars:
+    name: ""
+    cask: ""
+  tags:
+  - macos
