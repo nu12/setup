@@ -1,31 +1,22 @@
 ---
 - name: Install rand
-  include_tasks:
-    file: tasks/install.yml
-  vars: 
-    install_binaries:
-    - name: rand
-      url: https://github.com/nu12/rand/releases/download/{{ rand.version }}/rand-ubuntu
+  ansible.builtin.shell: |
+    curl -fsSL -o rand-darwin-arm64.zip https://github.com/nu12/rand/releases/download/{{ rand.version }}/rand-linux-amd64.zip
+    unzip rand-linux-amd64.zip
+    chmod +x rand
+    mv rand /usr/bin/
+    rm rand-linux-amd64.zip
+  become: true
   tags:
   - ubuntu
 
-- name: Enable mise experimental
-  ansible.builtin.shell: |
-    /Users/{{ ansible_user_id }}/.local/bin/mise settings set experimental true
-  tags:
-  - macos
-
 - name: Install rand
-  include_tasks:
-    file: tasks/install_with_mise.yml
-  vars: 
-    name: go:github.com/nu12/rand
-    version: "{{ rand.version }}"
-  tags:
-  - macos
-
-- name: Disable mise experimental
   ansible.builtin.shell: |
-    /Users/{{ ansible_user_id }}/.local/bin/mise settings set experimental false
+    curl -fsSL -o rand-darwin-arm64.zip https://github.com/nu12/rand/releases/download/{{ rand.version }}/rand-darwin-arm64.zip
+    unzip rand-darwin-arm64.zip
+    chmod +x rand
+    mv rand /Users/{{ ansible_user_id }}/.local/bin/
+    rm rand-darwin-arm64.zip
+  become: false
   tags:
   - macos

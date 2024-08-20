@@ -15,7 +15,7 @@ install_minikube: true
 install_mise: true
 rand:
   install: true
-  version: v1.1.0
+  version: v1.1.1
 install_remmina: true
 install_snap: true
 install_sublimetext: true
