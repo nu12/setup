@@ -1,7 +1,7 @@
 ---
 - name: Install rand
   ansible.builtin.shell: |
-    curl -fsSL -o rand-darwin-arm64.zip https://github.com/nu12/rand/releases/download/{{ rand.version }}/rand-linux-amd64.zip
+    curl -fsSL -o rand-linux-amd64.zip https://github.com/nu12/rand/releases/download/{{ rand.version }}/rand-linux-amd64.zip
     unzip rand-linux-amd64.zip
     chmod +x rand
     mv rand /usr/bin/
