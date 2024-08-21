@@ -58,7 +58,7 @@ Here is a list of all softwares included for each platform:
 |mise|&check;|&check;|-|
 |node|&check;|&check;|mise|
 |packer|&check;|&check;|mise|
-|rand|&check;|&check;|mise (macos)|
+|rand|&check;|&check;|-|
 |remmina|&check;||-|
 |ruby|&check;|&check;|mise|
 |snap|&check;||-|
