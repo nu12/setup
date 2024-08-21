@@ -15,3 +15,23 @@
     apt_packages: "{{ ubuntu.apt_packages }}"
   tags:
   - ubuntu
+
+- name: Update all packages to their latest version
+  ansible.builtin.shell: |
+    brew update
+    brew upgrade
+  become: false
+  tags:
+  - macos
+
+- name: Set home directory (Linux)
+  ansible.builtin.set_fact:
+    home_directory: /home/{{ ansible_user_id }}
+  tags:
+  - ubuntu
+
+- name: Set home directory (MacOS)
+  ansible.builtin.set_fact:
+    home_directory: /Users/{{ ansible_user_id }}
+  tags:
+  - macos

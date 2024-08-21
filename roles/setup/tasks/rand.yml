@@ -1,22 +1,24 @@
 ---
-- name: Install rand
-  ansible.builtin.shell: |
-    curl -fsSL -o rand-linux-amd64.zip https://github.com/nu12/rand/releases/download/{{ rand.version }}/rand-linux-amd64.zip
-    unzip rand-linux-amd64.zip
-    chmod +x rand
-    mv rand /usr/bin/
-    rm rand-linux-amd64.zip
-  become: true
+- name: Set package name (Linux)
+  ansible.builtin.set_fact:
+    rand_package: rand-linux-amd64
   tags:
   - ubuntu
 
+- name: Set package name (MacOS)
+  ansible.builtin.set_fact:
+    rand_package: rand-darwin-arm64
+  tags:
+  - macos
+
 - name: Install rand
   ansible.builtin.shell: |
-    curl -fsSL -o rand-darwin-arm64.zip https://github.com/nu12/rand/releases/download/{{ rand.version }}/rand-darwin-arm64.zip
-    unzip rand-darwin-arm64.zip
+    curl -fsSL -o {{ rand_package }}.zip https://github.com/nu12/rand/releases/download/{{ rand.version }}/{{ rand_package }}.zip
+    unzip {{ rand_package }}.zip
     chmod +x rand
-    mv rand /Users/{{ ansible_user_id }}/.local/bin/
-    rm rand-darwin-arm64.zip
+    mv rand {{ home_directory }}/.local/bin/
+    rm {{ rand_package }}.zip
   become: false
   tags:
+  - ubuntu
   - macos
