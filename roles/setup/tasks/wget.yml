@@ -6,3 +6,11 @@
     apt_packages: "wget"
   tags:
   - ubuntu
+
+- name: Install wget
+  include_tasks:
+    file: tasks/install_with_homebrew.yml
+  vars: 
+    name: "wget"
+  tags:
+  - macos

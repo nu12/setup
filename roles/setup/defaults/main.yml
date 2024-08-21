@@ -9,13 +9,13 @@ install_helm: true
 install_jq: true
 kubectl:
   install: true
-  version: v1.30
+  version: 1.31
 install_make: true
 install_minikube: true
 install_mise: true
 rand:
   install: true
-  version: v1.1.0
+  version: v1.1.1
 install_remmina: true
 install_snap: true
 install_sublimetext: true

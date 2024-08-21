@@ -12,3 +12,11 @@
       - azure-cli
   tags:
   - ubuntu
+
+- name: Install azure-cli
+  include_tasks:
+    file: tasks/install_with_homebrew.yml
+  vars: 
+    name: "azure-cli"
+  tags:
+  - macos

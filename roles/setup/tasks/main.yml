@@ -5,6 +5,7 @@
   when: install_zsh
   tags:
   - ubuntu
+  - macos
 
 - name: Install AWS CLI
   include_tasks:
@@ -12,6 +13,7 @@
   when: install_aws
   tags:
   - ubuntu
+  - macos
 
 - name: Install Azure CLI
   include_tasks:
@@ -19,6 +21,7 @@
   when: install_azure
   tags:
   - ubuntu
+  - macos
 
 - name: Install brave
   include_tasks:
@@ -26,6 +29,7 @@
   when: install_brave
   tags:
   - ubuntu
+  - macos
 
 - name: Install docker
   include_tasks:
@@ -33,6 +37,7 @@
   when: install_docker
   tags:
   - ubuntu
+  - macos
 
 - name: Install flameshot
   include_tasks:
@@ -47,6 +52,7 @@
   when: install_gcp
   tags:
   - ubuntu
+  - macos
 
 - name: Install gimp
   include_tasks:
@@ -54,6 +60,7 @@
   when: install_gimp
   tags:
   - ubuntu
+  - macos
 
 - name: Install helm
   include_tasks:
@@ -61,6 +68,7 @@
   when: install_helm
   tags:
   - ubuntu
+  - macos
 
 - name: Install jq
   include_tasks:
@@ -68,6 +76,7 @@
   when: install_jq
   tags:
   - ubuntu
+  - macos
 
 - name: Install kubectl
   include_tasks:
@@ -75,6 +84,7 @@
   when: kubectl.install
   tags:
   - ubuntu
+  - macos
 
 - name: Install make
   include_tasks:
@@ -82,6 +92,7 @@
   when: install_make
   tags:
   - ubuntu
+  - macos
 
 - name: Install minikube
   include_tasks:
@@ -89,6 +100,7 @@
   when: install_minikube
   tags:
   - ubuntu
+  - macos
 
 - name: Install mise
   include_tasks:
@@ -96,6 +108,7 @@
   when: install_mise
   tags:
   - ubuntu
+  - macos
 
 - name: Install rand
   include_tasks:
@@ -103,32 +116,12 @@
   when: rand.install
   tags:
   - ubuntu
+  - macos
 
 - name: Install remmina
   include_tasks:
     file: remmina.yml
   when: install_remmina
-  tags:
-  - ubuntu
-
-- name: Install tilix
-  include_tasks:
-    file: tilix.yml
-  when: install_tilix
-  tags:
-  - ubuntu
-
-- name: Install tree
-  include_tasks:
-    file: tree.yml
-  when: install_tree
-  tags:
-  - ubuntu
-
-- name: Install trivy
-  include_tasks:
-    file: trivy.yml
-  when: install_trivy
   tags:
   - ubuntu
 
@@ -145,6 +138,30 @@
   when: install_sublimetext
   tags:
   - ubuntu
+  - macos
+
+- name: Install tilix
+  include_tasks:
+    file: tilix.yml
+  when: install_tilix
+  tags:
+  - ubuntu
+
+- name: Install tree
+  include_tasks:
+    file: tree.yml
+  when: install_tree
+  tags:
+  - ubuntu
+  - macos
+
+- name: Install trivy
+  include_tasks:
+    file: trivy.yml
+  when: install_trivy
+  tags:
+  - ubuntu
+  - macos
 
 - name: Install veracrypt
   include_tasks:
@@ -152,6 +169,7 @@
   when: veracrypt.install
   tags:
   - ubuntu
+  - macos
 
 - name: Install vlc
   include_tasks:
@@ -159,6 +177,7 @@
   when: install_vlc
   tags:
   - ubuntu
+  - macos
 
 - name: Install vscode
   include_tasks:
@@ -166,6 +185,7 @@
   when: install_vscode
   tags:
   - ubuntu
+  - macos
 
 - name: Install warp
   include_tasks:
@@ -173,6 +193,7 @@
   when: install_warp
   tags:
   - ubuntu
+  - macos
 
 - name: Install wget
   include_tasks:
@@ -180,6 +201,7 @@
   when: install_wget
   tags:
   - ubuntu
+  - macos
 
 - name: Install xsel
   include_tasks:
@@ -195,6 +217,7 @@
   when: (install_mise) and (golang.install)
   tags:
   - ubuntu
+  - macos
 
 - name: Install java
   include_tasks:
@@ -202,6 +225,7 @@
   when: (install_mise) and (java.install)
   tags:
   - ubuntu
+  - macos
 
 - name: Install node
   include_tasks:
@@ -209,6 +233,7 @@
   when: (install_mise) and (node.install)
   tags:
   - ubuntu
+  - macos
 
 - name: Install packer
   include_tasks:
@@ -216,6 +241,7 @@
   when: (install_mise) and (packer.install)
   tags:
   - ubuntu
+  - macos
 
 - name: Install ruby
   include_tasks:
@@ -223,6 +249,7 @@
   when: (install_mise) and (ruby.install)
   tags:
   - ubuntu
+  - macos
 
 - name: Install terraform
   include_tasks:
@@ -230,3 +257,4 @@
   when: (install_mise) and (terraform.install)
   tags:
   - ubuntu
+  - macos

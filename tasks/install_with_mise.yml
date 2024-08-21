@@ -7,3 +7,12 @@
     version: ""
   tags:
   - ubuntu
+
+- name: Install with mise
+  ansible.builtin.shell: |
+    /Users/{{ ansible_user_id }}/.local/bin/mise use -g {{ name }}@{{ version }}
+  vars:
+    name: ""
+    version: ""
+  tags:
+  - macos

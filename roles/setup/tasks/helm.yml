@@ -9,3 +9,11 @@
       post_script: ""
   tags:
   - ubuntu
+
+- name: Install helm
+  include_tasks:
+    file: tasks/install_with_homebrew.yml
+  vars: 
+    name: "helm"
+  tags:
+  - macos

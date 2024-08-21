@@ -12,3 +12,11 @@
       - trivy
   tags:
   - ubuntu
+
+- name: Install trivy
+  include_tasks:
+    file: tasks/install_with_homebrew.yml
+  vars: 
+    name: "trivy"
+  tags:
+  - macos

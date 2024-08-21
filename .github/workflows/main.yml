@@ -9,7 +9,7 @@ on:
   workflow_dispatch: {}
 
 jobs:
-  build:
+  ubuntu:
     strategy:
       matrix:
         dockerfile: [ubuntu-20.04, ubuntu-22.04]
@@ -22,3 +22,14 @@ jobs:
         PLATFORM=$(echo ${{ matrix.dockerfile }} | cut -d "-" -f 1)
         docker build -f .github/dockerfiles/${{ matrix.dockerfile }}.Dockerfile -t setup .
         docker run setup /bin/bash -c "/home/me/.local/bin/ansible-playbook ${{ matrix.playbook }}.yml --tags $PLATFORM"
+
+  macos:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install ansible
+      run: |
+        brew install ansible
+    - name: Run playbook
+      run: |
+        ansible-playbook setup.yml --tags macos

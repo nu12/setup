@@ -6,3 +6,20 @@
     apt_packages: "zsh"
   tags:
   - ubuntu
+
+- name: Change default shell
+  ansible.builtin.shell: |
+    usermod --shell /bin/bash {{ ansible_user_id }}
+  become: true
+  tags:
+  - ubuntu
+
+- name: Install oh-my-zsh
+  ansible.builtin.shell: |
+    curl -Lo install.sh https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+    sh install.sh --unattended
+    rm install.sh
+  become: false
+  tags:
+  - ubuntu
+  - macos

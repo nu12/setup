@@ -12,3 +12,12 @@
       - code
   tags:
   - ubuntu
+
+- name: Install vscode
+  include_tasks:
+    file: tasks/install_with_homebrew.yml
+  vars: 
+    name: "visual-studio-code"
+    cask: "--cask"
+  tags:
+  - macos

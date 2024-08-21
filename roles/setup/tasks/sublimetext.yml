@@ -12,3 +12,12 @@
       - sublime-text
   tags:
   - ubuntu
+
+- name: Install sublimetext
+  include_tasks:
+    file: tasks/install_with_homebrew.yml
+  vars: 
+    name: "sublime-text"
+    cask: "--cask"
+  tags:
+  - macos

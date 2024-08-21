@@ -8,3 +8,11 @@
       url: https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
   tags:
   - ubuntu
+
+- name: Install minikube
+  include_tasks:
+    file: tasks/install_with_homebrew.yml
+  vars: 
+    name: "minikube"
+  tags:
+  - macos

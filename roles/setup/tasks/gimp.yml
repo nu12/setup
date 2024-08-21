@@ -6,3 +6,12 @@
     apt_packages: "gimp"
   tags:
   - ubuntu
+
+- name: Install gimp
+  include_tasks:
+    file: tasks/install_with_homebrew.yml
+  vars: 
+    name: "gimp"
+    cask: "--cask"
+  tags:
+  - macos

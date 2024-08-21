@@ -18,3 +18,12 @@
       url: "https://app.warp.dev/download?package=deb"
   tags:
   - ubuntu
+
+- name: Install warp
+  include_tasks:
+    file: tasks/install_with_homebrew.yml
+  vars: 
+    name: "warp"
+    cask: "--cask"
+  tags:
+  - macos

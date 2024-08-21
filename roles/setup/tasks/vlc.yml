@@ -6,3 +6,12 @@
     apt_packages: "vlc"
   tags:
   - ubuntu
+
+- name: Install vlc
+  include_tasks:
+    file: tasks/install_with_homebrew.yml
+  vars: 
+    name: "vlc"
+    cask: "--cask"
+  tags:
+  - macos

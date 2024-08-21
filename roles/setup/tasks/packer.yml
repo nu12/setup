@@ -7,3 +7,4 @@
     version: "{{ packer.version }}"
   tags:
   - ubuntu
+  - macos

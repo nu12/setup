@@ -21,3 +21,12 @@
       url: "https://launchpad.net/veracrypt/trunk/{{ veracrypt.version }}/+download/veracrypt-{{ veracrypt.version }}-Ubuntu-{{ veracrypt.ubuntu }}-amd64.deb"
   tags:
   - ubuntu
+
+- name: Install veracrypt
+  include_tasks:
+    file: tasks/install_with_homebrew.yml
+  vars: 
+    name: "veracrypt"
+    cask: "--cask"
+  tags:
+  - macos
