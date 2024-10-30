@@ -235,14 +235,6 @@
   - ubuntu
   - macos
 
-- name: Install packer
-  include_tasks:
-    file: packer.yml
-  when: (install_mise) and (packer.install)
-  tags:
-  - ubuntu
-  - macos
-
 - name: Install ruby
   include_tasks:
     file: ruby.yml

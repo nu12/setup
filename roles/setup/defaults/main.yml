@@ -3,7 +3,7 @@ install_azure: true
 install_brave: true
 install_docker: true
 install_flameshot: true
-install_gcp: true
+install_gcp: false
 install_gimp: true
 install_helm: true
 install_jq: true
@@ -24,8 +24,8 @@ install_tree: true
 install_trivy: true
 veracrypt:
   install: true
-  version: 1.26.7
-  ubuntu: 22.04
+  version: 1.26.15
+  ubuntu: 24.04
 install_vlc: true
 install_vscode: true
 install_warp: true
@@ -42,9 +42,6 @@ java:
 node:
   install: true
   version: 20
-packer:
-  install: true
-  version: latest
 ruby:
   install: true
   version: 3.3

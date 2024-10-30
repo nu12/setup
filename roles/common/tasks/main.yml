@@ -8,7 +8,7 @@
   tags:
   - ubuntu
   
-- name: Install
+- name: Install dependencies
   include_tasks:
     file: tasks/install.yml
   vars: 
@@ -16,12 +16,11 @@
   tags:
   - ubuntu
 
-- name: Update all packages to their latest version
-  ansible.builtin.shell: |
-    brew update
-    brew upgrade
-  become: false
+- name: Update all homebrew packages to their latest version
+  include_tasks:
+    file: tasks/update_with_homebrew.yml
   tags:
+  - ubuntu
   - macos
 
 - name: Set home directory (Linux)

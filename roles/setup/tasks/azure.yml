@@ -1,22 +1,9 @@
 ---
 - name: Install azure-cli
   include_tasks:
-    file: tasks/install.yml
-  vars: 
-    apt_additional_packages:
-    - name: azure-cli
-      gpg_key: https://packages.microsoft.com/keys/microsoft.asc
-      apt_repo: https://packages.microsoft.com/repos/azure-cli/
-      release: "$(lsb_release -cs) main"
-      packages:
-      - azure-cli
-  tags:
-  - ubuntu
-
-- name: Install azure-cli
-  include_tasks:
     file: tasks/install_with_homebrew.yml
   vars: 
     name: "azure-cli"
   tags:
+  - ubuntu
   - macos

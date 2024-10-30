@@ -1,7 +1,7 @@
 ---
 - name: Install with mise
   ansible.builtin.shell: |
-    {{ home_directory }}/.local/bin/mise use -g {{ name }}@{{ version }}
+    {{ home_directory }}/.local/bin/mise use -g {{ name }}@{{ version }} --yes
   vars:
     name: ""
     version: ""

@@ -1,16 +1,9 @@
 ---
 - name: Install make
   include_tasks:
-    file: tasks/install.yml
-  vars: 
-    apt_packages: "make"
-  tags:
-  - ubuntu
-
-- name: Install make
-  include_tasks:
     file: tasks/install_with_homebrew.yml
   vars: 
     name: "make"
   tags:
+  - ubuntu
   - macos

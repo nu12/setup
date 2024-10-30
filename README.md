@@ -4,12 +4,17 @@ This repo is the automation of my work/study setup. All the choices made are hea
 
 ## Getting started
 
-Install git and ansible to be able to run the playbooks. On Ubuntu, run:
+Install git, homebrew and ansible to be able to run the playbooks. 
+
+On Ubuntu, run:
 ```
-apt-get install git python3 python3-pip && python3 -m pip install --user ansible
+apt-get install git python3 python3-pip pipx && pipx install --include-deps ansible
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-On MacOS, install also homebrew with:
+Follow the directions to add the homebrew bin folder to the PATH with the `echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> your-rc-file` command.
+
+On MacOS, run:
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew install git ansible
@@ -57,7 +62,6 @@ Here is a list of all softwares included for each platform:
 |make|&check;|&check;|-|
 |mise|&check;|&check;|-|
 |node|&check;|&check;|mise|
-|packer|&check;|&check;|mise|
 |rand|&check;|&check;|-|
 |remmina|&check;||-|
 |ruby|&check;|&check;|mise|

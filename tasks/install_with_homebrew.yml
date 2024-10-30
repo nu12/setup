@@ -1,6 +1,15 @@
 ---
 - name: Install with homebrew
   ansible.builtin.shell: |
+    /home/linuxbrew/.linuxbrew/bin/brew install {{ cask }} {{ name }}
+  vars:
+    name: ""
+    cask: ""
+  tags:
+  - ubuntu
+
+- name: Install with homebrew
+  ansible.builtin.shell: |
     brew install {{ cask }} {{ name }}
   vars:
     name: ""

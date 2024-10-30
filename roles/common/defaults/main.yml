@@ -1,6 +1,5 @@
 ubuntu:
   apt_packages:
-  - lsb-core
   - software-properties-common
   - libssl-dev
   - apt-transport-https 

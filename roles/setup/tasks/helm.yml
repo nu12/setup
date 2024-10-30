@@ -1,19 +1,9 @@
 ---
 - name: Install helm
   include_tasks:
-    file: tasks/install.yml
-  vars: 
-    install_scripts:
-    - name: helm
-      url: https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
-      post_script: ""
-  tags:
-  - ubuntu
-
-- name: Install helm
-  include_tasks:
     file: tasks/install_with_homebrew.yml
   vars: 
     name: "helm"
   tags:
+  - ubuntu
   - macos
