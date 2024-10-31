@@ -1,16 +1,9 @@
 ---
 - name: Install tree
   include_tasks:
-    file: tasks/install.yml
-  vars: 
-    apt_packages: "tree"
-  tags:
-  - ubuntu
-
-- name: Install tree
-  include_tasks:
     file: tasks/install_with_homebrew.yml
   vars: 
     name: "tree"
   tags:
+  - ubuntu
   - macos

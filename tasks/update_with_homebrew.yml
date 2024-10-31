@@ -1,0 +1,14 @@
+---
+- name: Update all homebrew packages to their latest version (Linux)
+  ansible.builtin.shell: |
+    /home/linuxbrew/.linuxbrew/bin/brew update
+    /home/linuxbrew/.linuxbrew/bin/brew upgrade  
+  tags:
+  - ubuntu
+
+- name: Update all homebrew packages to their latest version (MacOS)
+  ansible.builtin.shell: |
+    brew update
+    brew upgrade
+  tags:
+  - macos

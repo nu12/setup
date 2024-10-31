@@ -12,5 +12,3 @@ RUN pipx install --include-deps ansible
 RUN NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 COPY . .
-
-RUN /home/me/.local/bin/ansible-playbook setup.yml --tags ubuntu
