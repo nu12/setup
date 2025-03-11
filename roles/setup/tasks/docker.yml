@@ -17,11 +17,24 @@
   tags:
   - ubuntu
 
-- name: Install docker (desktop)
+- name: Install docker (cli)
   include_tasks:
     file: tasks/install_with_homebrew.yml
   vars: 
     name: "docker"
-    cask: "--cask"
+  tags:
+  - macos
+
+- name: Install docker (engine)
+  include_tasks:
+    file: tasks/install_with_homebrew.yml
+  vars: 
+    name: "colima"
+  tags:
+  - macos
+
+- name: Initialize colima
+  ansible.builtin.shell: |
+    colima start --runtime containerd
   tags:
   - macos
